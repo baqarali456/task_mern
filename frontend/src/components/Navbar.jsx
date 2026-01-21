@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { useEffectEvent } from "react"
-import { handleFilterTasks, handleTasks } from "../store/slice"
+import { authLogout, handleFilterTasks, handleTasks } from "../store/slice"
 
 function Navbar() {
 
@@ -44,6 +44,7 @@ function Navbar() {
   const handleLogout = async() =>{
     try {
       await axios.post('http://localhost:8000/api/v1/user/logout',{},{withCredentials:true})
+      dispatch(authLogout());
       navigate('/login')
     } catch (error) {
       console.log(error)
@@ -97,14 +98,15 @@ function Navbar() {
         }
        
       </ul>
-      <div className=" d-flex gap-3">
-        {
-          authStatus && <button onClick={handleLogout} className=" btn btn-danger mx-1 ">Logout</button>
-        }
+     {authStatus && <div className=" d-flex gap-3">
+        
+           <button onClick={handleLogout} className=" btn btn-danger mx-1 ">Logout</button>
+        
         <input value={search}
          onChange={(e)=>setSearch(e.target.value)} className="form-control me-2" type="search task by title" placeholder="Search" aria-label="Search"/>
 
       </div>
+      }
       
     </div>
   </div>
