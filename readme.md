@@ -1,4 +1,36 @@
-👤 User Authentication API Documentation
+� Getting Started
+
+Prerequisites
+
+Node.js (v14 or higher)
+npm (Node Package Manager)
+MongoDB
+
+Installation & Setup
+
+1️⃣ Install Dependencies
+
+# Install backend dependencies
+cd backend
+npm i
+
+# Install frontend dependencies
+cd ../frontend
+npm i
+
+2️⃣ Run Development Server
+
+# Run backend (from backend directory)
+npm run dev
+
+# Run frontend (from frontend directory, in a new terminal)
+npm run dev
+
+Both will start on their respective ports (Backend: typically /8000, Frontend: typically 5173)
+
+---
+
+��👤 User Authentication API Documentation
 Base URL
 /api/v1/user
 

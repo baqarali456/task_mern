@@ -3,7 +3,6 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-import { useEffectEvent } from "react"
 import { authLogout, handleFilterTasks, handleTasks } from "../store/slice"
 
 function Navbar() {
